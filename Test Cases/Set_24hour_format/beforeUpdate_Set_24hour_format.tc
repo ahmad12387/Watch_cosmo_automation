@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>beforeUpdate_Set_24hour_format</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>f036a64d-7d2b-47c6-afd6-744b634fc25f</testCaseGuid>
+</TestCaseEntity>

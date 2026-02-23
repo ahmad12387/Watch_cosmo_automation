@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>send_image</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>4ce5e5f3-5e8f-4362-b2da-2c6c961f9d9e</testCaseGuid>
+</TestCaseEntity>

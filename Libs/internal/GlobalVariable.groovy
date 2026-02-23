@@ -9,13 +9,30 @@ import com.kms.katalon.core.main.TestCaseMain
  */
 public class GlobalVariable {
      
+    /**
+     * <p></p>
+     */
+    public static Object G_Timeout
+     
+    /**
+     * <p></p>
+     */
+    public static Object G_SiteURL
+     
+    /**
+     * <p></p>
+     */
+    public static Object G_AppPath
+     
 
     static {
         try {
             def selectedVariables = TestCaseMain.getGlobalVariables("default")
 			selectedVariables += TestCaseMain.getGlobalVariables(RunConfiguration.getExecutionProfile())
-            selectedVariables += RunConfiguration.getOverridingParameters()
     
+            G_Timeout = selectedVariables['G_Timeout']
+            G_SiteURL = selectedVariables['G_SiteURL']
+            G_AppPath = selectedVariables['G_AppPath']
             
         } catch (Exception e) {
             TestCaseMain.logGlobalVariableError(e)

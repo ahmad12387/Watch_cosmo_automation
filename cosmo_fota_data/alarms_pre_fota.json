@@ -1,0 +1,26 @@
+[
+    {
+        "label": "cofee",
+        "time": "07:31",
+        "repeat": "Every Mon, Tue, Sun",
+        "active": "true"
+    },
+    {
+        "label": "hoby",
+        "time": "07:32",
+        "repeat": "Today",
+        "active": "true"
+    },
+    {
+        "label": "breakfast",
+        "time": "10:32",
+        "repeat": "Every Mon, Tue",
+        "active": "true"
+    },
+    {
+        "label": "Alarm",
+        "time": "23:42",
+        "repeat": "Today",
+        "active": "true"
+    }
+]

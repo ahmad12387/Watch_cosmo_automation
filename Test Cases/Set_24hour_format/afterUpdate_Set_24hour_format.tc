@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>afterUpdate_Set_24hour_format</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>4f532149-2d98-4ed5-a386-7337617e9339</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>beforeUpdate_make_an_alarm</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>9b2da02c-0e75-402c-b05c-185b8d867f43</testCaseGuid>
+</TestCaseEntity>

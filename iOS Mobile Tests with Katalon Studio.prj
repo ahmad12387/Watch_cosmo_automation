@@ -3,10 +3,13 @@
    <description></description>
    <name>iOS Mobile Tests with Katalon Studio</name>
    <tag></tag>
-   <UUID>b0181789-9ac8-47c5-9491-20c3e74dd413</UUID>
+   <UUID>d33d961f-e6f0-404e-9dc9-3619c92a8a21</UUID>
+   <freeLicense>true</freeLicense>
    <migratedVersion>5.9.0</migratedVersion>
+   <modifiedEdition>ENTERPRISE</modifiedEdition>
+   <modifiedVersion>10.3.1</modifiedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
-   <projectFileLocation>/Users/loantran/Documents/ios-mobile-tests/iOS Mobile Tests with Katalon Studio.prj</projectFileLocation>
+   <projectFileLocation>C:\Users\ahmad\Katalon Studio\Watch_cosmo_automation\iOS Mobile Tests with Katalon Studio.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
@@ -25,5 +28,6 @@
          </systemFolderConfiguration>
       </systemFolderList>
    </sourceContent>
-   <type>GENERIC</type>
+   <timeStampInProperties>true</timeStampInProperties>
+   <type>MOBILE</type>
 </Project>

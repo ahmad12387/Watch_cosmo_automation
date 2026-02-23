@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_PostFota_Save_Messages_emoji_text_image_video</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>e32ff03d-4938-4ad1-9fc7-61ce4fbbc2fe</testCaseGuid>
+</TestCaseEntity>

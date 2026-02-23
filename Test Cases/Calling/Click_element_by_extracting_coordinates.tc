@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Click_element_by_extracting_coordinates</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ee7b3c83-e176-4d14-83eb-0889e9f12951</testCaseGuid>
+</TestCaseEntity>

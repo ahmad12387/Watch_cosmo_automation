@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_PreFota_Save_Messages_emoji_text_image_video</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>0f18af3b-6e41-4797-9651-2c6a0c9949af</testCaseGuid>
+</TestCaseEntity>

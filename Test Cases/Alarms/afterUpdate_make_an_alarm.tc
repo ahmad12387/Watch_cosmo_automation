@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>afterUpdate_make_an_alarm</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>5d5126ca-3ddd-465b-b1db-85fd64ac5f84</testCaseGuid>
+</TestCaseEntity>

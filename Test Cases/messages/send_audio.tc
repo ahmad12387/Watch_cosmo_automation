@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>send_audio</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>214ab869-3c78-4f0d-9623-1c61fc6b9a11</testCaseGuid>
+</TestCaseEntity>

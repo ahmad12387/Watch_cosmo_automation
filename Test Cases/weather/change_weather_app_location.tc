@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>change_weather_app_location</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>6e14794e-edb1-441b-90c2-7fe40af023a3</testCaseGuid>
+</TestCaseEntity>

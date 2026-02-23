@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>incoming audio</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>16c003a8-d2a1-4bae-8c87-c550c6d89e98</testCaseGuid>
+</TestCaseEntity>

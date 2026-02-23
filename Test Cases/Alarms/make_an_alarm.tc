@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>make_an_alarm</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>47a0d88b-8fc3-47b3-b958-bfe7a2c56a4f</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_PreFota_SaveMessages</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>1e3e317a-4950-44ec-b257-efb75a1bfbe0</testCaseGuid>
+</TestCaseEntity>

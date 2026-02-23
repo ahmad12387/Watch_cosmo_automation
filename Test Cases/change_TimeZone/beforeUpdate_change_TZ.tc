@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>beforeUpdate_change_TZ</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ac8f2fa3-484a-49ab-94c5-be30977df900</testCaseGuid>
+</TestCaseEntity>

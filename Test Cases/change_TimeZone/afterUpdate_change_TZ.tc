@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>afterUpdate_change_TZ</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>419ff97c-135c-4870-882f-933e2403348c</testCaseGuid>
+</TestCaseEntity>

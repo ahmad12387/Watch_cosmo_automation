@@ -1,0 +1,69 @@
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import internal.GlobalVariable as GlobalVariable
+
+// ========== STEP 1: Wake up the smartwatch ==========
+def wakeCommand = 'adb shell am start -n io.senlab.cosmo/io.senlab.cosmo.MainActivity'
+
+def process1 = wakeCommand.execute()
+
+process1.waitFor()
+
+KeywordUtil.logInfo('✅ Screen awakened successfully.')
+
+// Wait for the home screen to load
+Thread.sleep(2000)
+
+// ========== STEP 2: Swipe left to reach apps ==========
+def swipeCommand = 'adb shell input swipe 200 120 40 120'
+
+def process2 = swipeCommand.execute()
+
+process2.waitFor()
+
+KeywordUtil.logInfo('✅ Swipe left performed successfully.')
+
+// Wait for icons animation to complete
+Thread.sleep(2000)
+
+// ========== STEP 3: Open Dialer App ==========
+def openDialer = 'adb shell input tap 60 80'
+def process3 = openDialer.execute()
+process3.waitFor()
+KeywordUtil.logInfo("✅ Dialer app opened successfully.")
+// Wait for contact list to load
+Thread.sleep(2000)
+
+def tapContact = 'adb shell input tap 120 50'
+tapContact.execute().waitFor()
+
+KeywordUtil.logInfo('📞 Call initiated to Ahmad Alam.')
+Thread.sleep(5000)
+
+
+// ========== STEP 5: End the Call ==========
+def endCall = 'adb shell input tap 120 200' // red hangup button
+
+def process5 = endCall.execute()
+
+process5.waitFor()
+
+KeywordUtil.logInfo('📴 Call ended successfully.')
+
+// ========== STEP 6: Final Message ==========
+println('🎯 Flow completed successfully: Wake → Swipe Left → Open Dialer → Call Ahmad Alam → End Call')
+
