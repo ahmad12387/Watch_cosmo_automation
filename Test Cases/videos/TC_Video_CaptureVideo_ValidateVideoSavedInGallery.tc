@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_Video_CaptureVideo_ValidateVideoSavedInGallery</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ed469a6e-ac9a-4434-9385-43b6a754862c</testCaseGuid>
+</TestCaseEntity>
