@@ -30,22 +30,28 @@ def dumpAndParseXML() {
     return new XmlSlurper().parse(xmlFile)
 }
 
-// ========== STEP 1: Wake up the smartwatch ==========
-def wakeCommand = 'adb shell am start -n io.senlab.cosmo/io.senlab.cosmo.MainActivity'
-def process1 = wakeCommand.execute()
-process1.waitFor()
-KeywordUtil.logInfo("✅ Screen awakened successfully.")
-
-// Small delay to allow UI to load
-Thread.sleep(2000)
+//// ========== STEP 1: Wake up the smartwatch ==========
+//def wakeCommand = 'adb shell am start -n io.senlab.cosmo/io.senlab.cosmo.MainActivity'
+//def process1 = wakeCommand.execute()
+//process1.waitFor()
+//KeywordUtil.logInfo("✅ Screen awakened successfully.")
+//
+//// Small delay to allow UI to load
+//Thread.sleep(2000)
+// ========== STEP : Go back to previous screen ==========
+CustomKeywords.'smartWatch.SmartWatchNavigation.swipeBackToPreviousScreen'()
+// ========== STEP : Go back to previous screen ==========
+CustomKeywords.'smartWatch.SmartWatchNavigation.swipeBackToPreviousScreen'()
+// ========== STEP : Go back to previous screen ==========
+CustomKeywords.'smartWatch.SmartWatchNavigation.swipeBackToPreviousScreen'()
 
 // ========== STEP 2: Swipe left Till it reaches Alarm App==========
 def swipeCommand = 'adb shell input swipe 200 120 40 120'
 def process2 = swipeCommand.execute()
-Thread.sleep(2000)
-swipeCommand.execute()
-Thread.sleep(2000)
-swipeCommand.execute()
+//Thread.sleep(2000)
+//swipeCommand.execute()
+//Thread.sleep(2000)
+//swipeCommand.execute()
 Thread.sleep(2000)
 process2.waitFor()
 KeywordUtil.logInfo("✅ Swipe left performed successfully.")
@@ -140,25 +146,6 @@ KeywordUtil.logInfo("✅ Alarm app opened successfully.")
 //} else {
 //    KeywordUtil.markFailed("❌ Alarm with time ${savedAlarmTime} not found")
 //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

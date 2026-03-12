@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_FOTA_Verify_Gallery_Images_After_Update</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>96062016-e384-4cbd-bb7b-61db5af2e356</testCaseGuid>
+</TestCaseEntity>

@@ -116,51 +116,51 @@ def getSettingsMenuBoundsByIndex(xml, int index) {
 	}
 	
 		
-// ========== STEP 1: Wake up the smartwatch ==========
-def wakeCommand = 'adb shell am start -n io.senlab.cosmo/io.senlab.cosmo.MainActivity'
-def process1 = wakeCommand.execute()
-process1.waitFor()
-KeywordUtil.logInfo("✅ Screen awakened successfully.")
+//// ========== STEP 1: Wake up the smartwatch ==========
+//def wakeCommand = 'adb shell am start -n io.senlab.cosmo/io.senlab.cosmo.MainActivity'
+//def process1 = wakeCommand.execute()
+//process1.waitFor()
+//KeywordUtil.logInfo("✅ Screen awakened successfully.")
+//
+//// Small delay to allow UI to load
+//Thread.sleep(2000)
+//
+//// ========== STEP 2: Swipe left Till it reaches Settings App==========
+//def swipeCommand = 'adb shell input swipe 200 120 40 120'
+//def process2 = swipeCommand.execute()
+//Thread.sleep(3000)
+//swipeCommand.execute()
+//Thread.sleep(3000)
+//swipeCommand.execute()
+//Thread.sleep(3000)
+//swipeCommand.execute()
+//Thread.sleep(3000)
+//process2.waitFor()
+//KeywordUtil.logInfo("✅ Swipe left performed successfully.")
+//
+//// ========== STEP 3: Dump XML ==========
+//def xml = dumpAndParseXML()
+//
+//// ========== STEP 4: Click on Settings ==========
+//String settingsBounds = getAppIconBoundsByIndex(xml, 3)
+//tapNodeCenter(xml, "bounds", settingsBounds)
+//
+//// Wait for Settings screen to load
+//Thread.sleep(2000)
+//
+//// ========== STEP 5: Refresh XML (NO def here) ==========
+//xml = dumpAndParseXML()
+//
+//// ========== STEP 6: Click on Device ==========
+//String deviceBounds = getSettingsMenuBoundsByIndex(xml, 3)
+//tapNodeCenter(xml, "bounds", deviceBounds)
 
-// Small delay to allow UI to load
-Thread.sleep(2000)
-
-// ========== STEP 2: Swipe left Till it reaches Settings App==========
-def swipeCommand = 'adb shell input swipe 200 120 40 120'
-def process2 = swipeCommand.execute()
-Thread.sleep(3000)
-swipeCommand.execute()
-Thread.sleep(3000)
-swipeCommand.execute()
-Thread.sleep(3000)
-swipeCommand.execute()
-Thread.sleep(3000)
-process2.waitFor()
-KeywordUtil.logInfo("✅ Swipe left performed successfully.")
-
-// ========== STEP 3: Dump XML ==========
-def xml = dumpAndParseXML()
-
-// ========== STEP 4: Click on Settings ==========
-String settingsBounds = getAppIconBoundsByIndex(xml, 3)
-tapNodeCenter(xml, "bounds", settingsBounds)
-
-// Wait for Settings screen to load
-Thread.sleep(2000)
-
-// ========== STEP 5: Refresh XML (NO def here) ==========
-xml = dumpAndParseXML()
-
-// ========== STEP 6: Click on Device ==========
-String deviceBounds = getSettingsMenuBoundsByIndex(xml, 3)
-tapNodeCenter(xml, "bounds", deviceBounds)
-
-// ========== STEP 7: Refresh XML on Device Settings screen ==========
-xml = dumpAndParseXML()
-
-// ========== STEP 8: Click on Time ==========
-String timeBounds = getDeviceSettingsBoundsByIndex(xml, 2)
-tapNodeCenter(xml, "bounds", timeBounds)
+//// ========== STEP 7: Refresh XML on Device Settings screen ==========
+//xml = dumpAndParseXML()
+//
+//// ========== STEP 8: Click on Time ==========
+//String timeBounds = getDeviceSettingsBoundsByIndex(xml, 2)
+//tapNodeCenter(xml, "bounds", timeBounds)
 
 // ========== STEP 9: Refresh XML on Time screen ==========
 xml = dumpAndParseXML()

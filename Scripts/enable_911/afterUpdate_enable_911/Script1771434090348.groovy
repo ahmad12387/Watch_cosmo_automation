@@ -123,19 +123,63 @@ process1.waitFor()
 KeywordUtil.logInfo("✅ Screen awakened successfully.")
 
 // Small delay to allow UI to load
-Thread.sleep(2000)
+Thread.sleep(4000)
 
 // ========== STEP 2: Swipe left Till it reaches Settings App==========
 def swipeCommand = 'adb shell input swipe 200 120 40 120'
+Thread.sleep(2000)
 def process2 = swipeCommand.execute()
 Thread.sleep(3000)
-swipeCommand.execute()
+// verify enable 911 in contacts//
+// ========== STEP 3: Open Dialer App ==========
+def openDialer = 'adb shell input tap 60 80'
+def process3 = openDialer.execute()
+process3.waitFor()
+KeywordUtil.logInfo("✅ Dialer app opened successfully.")
+// Wait for contact list to load
+Thread.sleep(2000)
+
+// ========== VERIFY EMERGENCY ROW EXISTS ON CONTACT SCREEN ==========
+
+xml = dumpAndParseXML()
+
+// Get all contact rows
+def contacts = xml.depthFirst().findAll {
+	it.name() == 'node' &&
+	it.@'resource-id'.toString() == 'io.senlab.cosmo:id/contact'
+}
+
+if (contacts.size() < 3) {
+	KeywordUtil.markFailed("❌ Expected at least 3 contact rows, found: ${contacts.size()}")
+	return
+}
+
+// Emergency row should be 2nd item (index 1)
+def emergencyRow = contacts[1]
+
+// Check if it has NO contact name text
+def contactNameNode = emergencyRow.depthFirst().find {
+	it.@'resource-id'.toString() == 'io.senlab.cosmo:id/contactName'
+}
+
+// Verify structure
+if (contactNameNode == null || contactNameNode.@text.toString().trim() == "") {
+	KeywordUtil.logInfo("✅ Emergency red row is present on Contacts screen")
+} else {
+	KeywordUtil.markFailed("❌ Second row is not Emergency. Found text: " + contactNameNode.@text.toString())
+}
+
+// ========== STEP : Go back to previous screen ==========
+CustomKeywords.'smartWatch.SmartWatchNavigation.swipeBackToPreviousScreen'()
+
 Thread.sleep(3000)
 swipeCommand.execute()
 Thread.sleep(3000)
 swipeCommand.execute()
 Thread.sleep(3000)
 process2.waitFor()
+swipeCommand.execute()
+Thread.sleep(3000)
 KeywordUtil.logInfo("✅ Swipe left performed successfully.")
 
 // ========== STEP 3: Dump XML ==========

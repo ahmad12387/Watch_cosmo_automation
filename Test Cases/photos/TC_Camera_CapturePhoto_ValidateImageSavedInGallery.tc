@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>change_weather_app_location</name>
+   <name>TC_Camera_CapturePhoto_ValidateImageSavedInGallery</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>6e14794e-edb1-441b-90c2-7fe40af023a3</testCaseGuid>
+   <testCaseGuid>f7850b47-505f-489a-afe7-ebd5f7be7028</testCaseGuid>
 </TestCaseEntity>

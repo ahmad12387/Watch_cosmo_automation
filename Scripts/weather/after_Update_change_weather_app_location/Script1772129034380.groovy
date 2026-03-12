@@ -22,24 +22,26 @@ def dumpAndParseXML() {
 	return new XmlSlurper().parse(xmlFile)
 }
 
-// ========== STEP 1: Wake up the smartwatch ==========
-def wakeCommand = 'adb shell am start -n io.senlab.cosmo/io.senlab.cosmo.MainActivity'
-def process1 = wakeCommand.execute()
-process1.waitFor()
-KeywordUtil.logInfo("✅ Screen awakened successfully.")
-
+//// ========== STEP 1: Wake up the smartwatch ==========
+//def wakeCommand = 'adb shell am start -n io.senlab.cosmo/io.senlab.cosmo.MainActivity'
+//def process1 = wakeCommand.execute()
+//process1.waitFor()
+//KeywordUtil.logInfo("✅ Screen awakened successfully.")
+//
+//// Small delay to allow UI to load
+//Thread.sleep(2000)
 // Small delay to allow UI to load
 Thread.sleep(2000)
+// ==========  Go back to previous screen ==========
+CustomKeywords.'smartWatch.SmartWatchNavigation.swipeBackToPreviousScreen'()
 
+// ==========  Go back to previous screen ==========
+CustomKeywords.'smartWatch.SmartWatchNavigation.swipeBackToPreviousScreen'()
+Thread.sleep(2000)
 // ========== STEP 2: Swipe left Till it reaches weather App==========
 def swipeCommand = 'adb shell input swipe 200 120 40 120'
-def process2 = swipeCommand.execute()
-Thread.sleep(2000)
+//def process2 = swipeCommand.execute()
 swipeCommand.execute()
-Thread.sleep(5000)
-process2.waitFor()
-KeywordUtil.logInfo("✅ Swipe left performed successfully.")
-Thread.sleep(5000)
 //=== Tapping Weather App ===
 KeywordUtil.logInfo("=== Tapping Weather App ===")
 
@@ -206,88 +208,20 @@ Thread.sleep(2000)
 KeywordUtil.logInfo("✅ Location card tapped successfully")
 
 
+//=== STEP 6 Verifying updated weather location ===//
+KeywordUtil.logInfo("=== Verifying updated weather location ===")
 
-// ==================================================
-// STEP 6: Verify and tap Select Location
-// ==================================================
-
-KeywordUtil.logInfo("=== STEP 6: Verifying Select Location option ===")
-
-def xmlSelectLocation = dumpAndParseXML()
-
-def selectLocationNode = xmlSelectLocation.depthFirst().find {
-	it.@'resource-id' == 'com.cosmotogether.weather:id/enterLocationCard' &&
-	it.@clickable == 'true'
-}
-
-if (!selectLocationNode) {
-	KeywordUtil.markFailed("❌ Select Location card not found on Weather Location screen")
-}
-
-// Extract bounds
-String selectBounds = selectLocationNode.@bounds.toString()
-def selectMatcher = selectBounds =~ /\[(\d+),(\d+)\]\[(\d+),(\d+)\]/
-selectMatcher.find()
-
-int slx1 = selectMatcher.group(1) as int
-int sly1 = selectMatcher.group(2) as int
-int slx2 = selectMatcher.group(3) as int
-int sly2 = selectMatcher.group(4) as int
-
-int selectCenterX = (slx1 + slx2) / 2
-int selectCenterY = (sly1 + sly2) / 2
-
-KeywordUtil.logInfo("📍 Tapping Select Location at (${selectCenterX}, ${selectCenterY})")
-
-"adb shell input tap ${selectCenterX} ${selectCenterY}".execute().waitFor()
 Thread.sleep(2000)
 
-KeywordUtil.logInfo("✅ Select Location tapped successfully")
+def xmlAfter = dumpAndParseXML()
 
-
-// ==================================================
-// STEP 7: Verify and tap Enter Location
-// ==================================================
-
-KeywordUtil.logInfo("=== STEP 7: Verifying Enter Location field ===")
-
-def xmlEnterLocation = dumpAndParseXML()
-
-// Find Enter Location card (most stable parent)
-def enterLocationNode = xmlEnterLocation.depthFirst().find {
-	it.@'resource-id' == 'com.cosmotogether.weather:id/enterLocationCard' &&
-	it.@clickable == 'true'
+def texasCityNode = xmlAfter.depthFirst().find {
+	it.@'resource-id' == 'com.cosmotogether.weather:id/enterLocationTxt' &&
+	it.@text?.toString() == "Texas City"
 }
 
-if (!enterLocationNode) {
-	KeywordUtil.markFailed("❌ Enter Location card not found on screen")
+if (!texasCityNode) {
+	KeywordUtil.markFailed("❌ Weather location NOT updated to Texas City")
 }
 
-// Extract bounds safely
-String enterBounds = enterLocationNode.@bounds.toString()
-def enterMatcher = enterBounds =~ /\[(\d+),(\d+)\]\[(\d+),(\d+)\]/
-enterMatcher.find()
-
-int elx1 = enterMatcher.group(1) as int
-int ely1 = enterMatcher.group(2) as int
-int elx2 = enterMatcher.group(3) as int
-int ely2 = enterMatcher.group(4) as int
-
-int enterCenterX = (elx1 + elx2) / 2
-int enterCenterY = (ely1 + ely2) / 2
-
-KeywordUtil.logInfo("📍 Tapping Enter Location at (${enterCenterX}, ${enterCenterY})")
-
-// Tap Enter Location
-"adb shell input tap ${enterCenterX} ${enterCenterY}".execute().waitFor()
-Thread.sleep(2000)
-
-// Tap Enter Location
-"adb shell input tap ${enterCenterX} ${enterCenterY}".execute().waitFor()
-Thread.sleep(2000)
-
-// Tap Enter Location
-"adb shell input tap ${enterCenterX} ${enterCenterY}".execute().waitFor()
-Thread.sleep(2000)
-
-KeywordUtil.logInfo("✅ Enter Location tapped successfully")
+KeywordUtil.logInfo("✅ Weather location successfully updated to Texas City")
